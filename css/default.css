@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow: hidden;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 150ch 1fr;
+    margin: 0;
+    height: 100vh;
+    overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+section {
+    grid-column: 2;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+section.intro {
+    text-align: center;
+}
+
+.menu {
+    margin-top: 32px;
+    margin-bottom: 108px;
+    font-size: 18px;
+}
+
+.menu-item {
+    display: inline-block;
+    margin: 0 40px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: black;
+}
+
+h3.my-name {
+    font-size: 32px;
+    margin-top: 48px;
+    margin-bottom: 12px;
+}
+
+h3.who-am-i {
+    font-weight: 300;
+    font-size: 24px;
+    color: #888a85;
+}
+
+hr {
+    width: 30ch;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 18px;
+}
+
+td {
+    padding-right: 24px;
+    padding-bottom: 12px;
+    vertical-align: top;
+}
+
+span.position {
+    font-weight: bold;
+}
+
+span.degree {
+    font-weight: bold;
+}
+
+ul.projects {
+    padding-left: 0;
+}
+
+ul.projects li {
+    font-size: 20px;
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+ul.projects li:hover {
+    list-style-type: square;
+}
+
+ul.projects li a {
+    text-decoration: none;
+    color: black;
+}
+
+section.project h2 {
+    text-decoration: underline;
+}
+
+p {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+section.project img {
+    position: relative;
+    float: right;
+    margin: 32px;
+}
+
+a.github {
+    text-decoration: none;
+    font-size: 20px;
+    color:darkblue;
+}
+
+section.project h5 {
+    font-size: 20px;
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+
+table.role th {
+    text-align: left;
+}
+
+table.role td {
+    width: 20ch;
+}
+
+table.role td span {
+    display: inline-block;
+    text-align: center;
+    background-color: darkgrey;
+    color: white;
+}
+
+span.pct100 { width: 20ch; }
+span.pct90  { width: 18ch; }
+span.pct80  { width: 16ch; }
+span.pct50  { width: 10ch; }
+span.pct20  { width:  4ch; }
+span.pct10  { width:  2ch; }
+
+table.patents th {
+    text-align: left;
+}
+
+code {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+ul.skills {
+    padding-left: 0;
+    margin-bottom: 32px;
+}
+
+ul.skills li {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+ul.interests {
+    padding-left: 0;
+    margin-bottom: 32px;
+}
+
+ul.interests li {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.back-to-top-button-wrapper {
+    display: none;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 99;
+}
+
+.circle-button {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #eaaa00;
+}
+
+.contact {
+    margin-right: 48px;
+    display: inline-flex;
+}
+
+.linkedin {
+    background-color:lightgrey;
+}
+
+.email {
+    height: 48px;
+    padding-top: 8px;
+    vertical-align: middle;
+    text-decoration: none;
+    color: darkblue;
+    font-size: 20px;
+}

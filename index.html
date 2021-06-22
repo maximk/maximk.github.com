@@ -1,5 +1,632 @@
 <html>
+
+<head>
+    <link href="/css/default.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var btn = document.querySelector(".back-to-top-button-wrapper");
+            document.body.addEventListener("scroll", function () {
+                var scrollableHeight = document.body.scrollHeight - document.body.clientHeight;
+                if ((document.body.scrollTop / scrollableHeight) > 0.2) {
+                    btn.style.display = "block";
+                } else {
+                    btn.style.display = "none";
+                }
+            });
+        });
+    </script>
+</head>
+
 <body>
+    <div class="back-to-top-button-wrapper">
+        <a href="#intro" class="circle-button"><img src="images/up1.svg"></a>
+    </div>
+
+    <section class="intro" id="intro">
+        <div class="menu">
+            <div class="menu-item"><a href="#experience-and-education">Experience &amp; Education</a></div>
+            <div class="menu-item"><a href="#selected-projects">Selected Projects</a></div>
+            <div class="menu-item"><a href="#skills-and-interests">Skills &amp; Interests</a></div>
+        </div>
+
+        <image src="images/mk1.png" />
+
+        <h3 class="my-name">MAXIM KHARCHENKO</h3>
+        <h3 class="who-am-i">Software development professional</h3>
+        <hr>
+        <h3 class="who-am-i">I build new products at technology-driven startups</h3>
+
+        <h3></h3>
+
+    </section>
+
+    <section>
+        <h2 id="experience-and-education">Experience &amp; Education</h2>
+
+        <table>
+            <tr>
+                <td>Jan 2020 - Now</td>
+                <td><span class="position">Partner/Techical Lead</span><br>
+                    <span class="company">PureTech Capital Management LLC</span><br>
+                    <span class="location">Palo Alto, USA</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Apr 2016 - Mar 2020</td>
+                <td><span class="position">Chief Software Architect</span><br>
+                    <span class="company">ModelOp Inc</span><br>
+                    <span class="location">Chicago, USA</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Sep 2012 - Mar 2016</td>
+                <td><span class="position">Founder/CTO</span><br>
+                    <span class="company">Cloudozer LLP</span><br>
+                    <span class="location">Kyiv, Ukraine</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Jan 2012 - Aug 2012</td>
+                <td><span class="position">Founder/CTO</span><br>
+                    <span class="company">fi-matrix Software Inc</span><br>
+                    <span class="location">Houston, USA</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Jan 2011 - Jan 2013</td>
+                <td><span class="position">CTO</span><br>
+                    <span class="company">Barque Energy Group</span><br>
+                    <span class="location">Quebec, Canada</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Jul 2008 - Aug 2009</td>
+                <td><span class="position">General Manager</span><br>
+                    <span class="company">Sitronics Labs</span><br>
+                    <span class="location">Moscow, Russia</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Jul 2006 - Aug 2009</td>
+                <td><span class="position">Director, Advanced R&amp;D</span><br>
+                    <span class="company">JSC Sitronics</span><br>
+                    <span class="location">Moscow, Russia</span>
+                </td>
+            </tr>
+
+        </table>
+
+        <hr>
+
+        <table>
+            <tr>
+                <td>2006 - 2008</td>
+                <td><span class="degree">MSE, Executive Master's in Technology Management (EMTM)</span><br>
+                    <span class="university">University of Pennsylvania, SEAS (co-sponsored by Wharton
+                        School)</span><br>
+                    <span class="location">Philadelphia, USA</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>1989 - 1995</td>
+                <td><span class="degree">Master of Science, Applied Mathematics</span><br>
+                    <span class="university">Moscow Institute of Physics and Technology (MIPT)</span><br>
+                    <span class="location">Moscow, Russia</span>
+                </td>
+            </tr>
+        </table>
+
+    </section>
+
+    <section>
+        <h2 id="selected-projects">Selected Projects</h2>
+
+        <ul class="projects">
+            <li><a href="#ling">A complete reimplementation of Erlang VM</a></li>
+            <li><a href="#fastscore">A microservices-based deployment platform for analytic models</a></li>
+            <li><a href="#gale">A SAS-to-PFA compiler</a></li>
+            <li>
+                <a href="#membrane">Membrane - a zero-copy local interface between parts of an ML pipeline</a>
+            </li>
+            <li><a href="#a6">A SaaS targeting new safety regulations for oil rigs</a></li>
+            <li><a href="#snooponme">snoopon.me - a web app for publishing screenshot streams</a></li>
+            <li><a href="#medea">An automated trading system of a boutique investment fund</a></li>
+            <li><a href="#lincx">A fast Erlang-based implementation of an OpenFlow switch</a></li>
+            <li><a href="#board">A cost-effective optical interactive board</a></li>
+            <li><a href="#align">A gene alignment pipeline for the Humane Genome project</a></li>
+        </ul>
+
+    </section>
+
+    <section class="project">
+        <h2 id="ling">A complete reimplementation of Erlang VM</h2>
+
+        <img src="images/ling1_1.png">
+
+        <p>
+            It is a massive project hard to describe siccinctly. The new Erlang VM - called LING - has been implemented
+            from scratch. LING is the functional equivalent of the standard Erlang VM (BEAM).
+        </p>
+
+        <p>
+            LING is a unikernel - it does not require an operating system. It boots directly as a Xen instance.
+            Essentially, Erlang processes become OS processes, Erlang drivers become OS drivers, Erlang shell - the OS
+            shell.
+        </p>
+
+        <p>
+            The LING's optimization target is the startup time. I tried hard to shrink the time since the beginning of
+            the boot sequence until the application code starts to execute. As a result, it is possible to spin up a
+            LING-based Xen instance within 100ms. At the time, a Linux-based Xen instance would take dozens of seconds
+            to boot.
+        </p>
+
+        <p>
+            LING uses a unique approach to specialization of the instruction set of the Erlang VM. The build process
+            analyzes a large body of Erlang code to identify widespread instruction variants. For example, if the `load
+            x1, 13` instruction happens often, then a new opcode is allocated specifically for loading the value 13 to
+            the register x1. Depending on the analyzed Erlang code, the low-level instruction set of Ling could be quite
+            different.
+        </p>
+
+        <p>
+            Later, LING has been ported to run on Linux and a baremetal MIPS microcontroller.
+        </p>
+
+        <a class="github" href="https://github.com/cloudozer/ling">github.com/cloudozer/ling</a>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <th>Requirements</th>
+                <th>Implementation</th>
+                <th>Maintenance</th>
+            </tr>
+            <tr>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct90">90%</span></td>
+                <td><span class="pct90">90%</span></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="project">
+        <h2 id="fastscore">A microservices-based deployment platform for analytic models</h2>
+
+        <p>
+            The platform 'operationalizes' the lifecycle management of analytic models.
+        </p>
+
+        <p>
+            I have implemented the core components of the initial version of the platform. One of then - the engine -
+            could control models written in Python, R, Java, and C. It also allowed uniform access to a range of data
+            sources, such as Kafka, Hadoop, S3, etc using a range of data formats.
+        </p>
+
+        <p>
+            The engine has been implemented in Erlang with bits of other languages. It has been highly-tuned for
+            performance. For example, the Avro schema would be compiled into a set of Erlang routines to provide for the
+            fastest decoding possible.
+        </p>
+
+        <p>
+            The engine had full control over the execution flow. It did not use third-party libraries which could start
+            new processes, etc. Many data access components were custom-made: a Kafka client, an HDFS client, AWS
+            authentication.
+        </p>
+
+        <p>
+            The initial version of the platform resulted in a series of pilot projects at Fortune 500 companies.
+        </p>
+
+        <h5>Patents granted</h5>
+
+        <table class="patents">
+            <tr>
+                <th>Patent No</th>
+                <th>Title</th>
+            </tr>
+            <tr>
+                <td><a href="https://uspto.report/patent/grant/11,003,486">11,003,486</a></td>
+                <td>Dynamically configurable microservice model for data analysis using sensors</td>
+            </tr>
+            <tr>
+                <td><a href="https://uspto.report/patent/grant/10,891,151">10,891,151</a></td>
+                <td>Deployment and management platform for model execution engine containers</td>
+            </tr>
+            <tr>
+                <td><a href="https://uspto.report/patent/grant/10,860,365">10,860,365</a></td>
+                <td>Analytic model execution engine with instrumentation for granular performance analysis for metrics
+                    and diagnostics for troubleshooting</td>
+            </tr>
+        </table>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <th>Requirements</th>
+                <th>Implementation</th>
+                <th>Maintenance</th>
+            </tr>
+            <tr>
+                <td>0%</td>
+                <td>10%</td>
+                <td><span class="pct80">80%</span></td>
+                <td><span class="pct50">50%</span></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="project">
+        <h2 id="gale">A SAS-to-PFA compiler</h2>
+
+        <p>
+            (PFA is a open format for representation of analytic models based on JSON)
+        </p>
+
+        <p>
+            The compiler has been developed in the course of a daring project to convert a large SAS model to a
+            different format. The SAS model had >10K lines of code and used a substantial subset of the SAS language.
+        </p>
+
+        <p>
+            The SAS-to-PFA compiler has been implemented in OCaml. The compiler proved to be complete enough to
+            translate the target model. The converted model has been producing results identical to the orgininal.
+        </p>
+
+        <p>
+            An interesting feature of the compiler is speculative parsing. The SAS language does not have proper
+            keywords. For example, the following is a valid SAS statement:
+            <code>
+            IF ELSE = 1 THEN ELSE = 2;
+            </code>
+
+            The compiler had to explore multiple ways to parse the SAS code to build a valid syntax tree.
+        </p>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <th>Requirements</th>
+                <th>Implementation</th>
+                <th>Maintenance</th>
+            </tr>
+            <tr>
+                <td>10%</td>
+                <td><span class="pct50">50%</span></td>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="project">
+        <h2 id="membrane">Membrane - a zero-copy local interface between parts of an ML pipeline</h2>
+
+        <p>
+            Membrane is yet another attempt to simplify passing data between ML components written in different
+            languages. It focuses on the mathematical meaning of data. For example, a number 3 (three) is treated as
+            such regardless of it being represented as an unsigned byte in the producer and as 64-bit IEEE754
+            floating-point value in the consumer.
+        </p>
+
+        <p>
+            Membrane targets local interfaces, not networking. A producer and consumer are extended with autogenerated
+            adapters. Plugging a producer into a consumer boils down to linking together corresponding object files.
+        </p>
+
+        <p>
+            Membrane does not introduce a new intermediate format in a contrast to similar mechanisms, such as Protocol
+            Buffers. There are no serialization/deserialization steps.
+        </p>
+
+        <p>
+            Membrane compiler has been implemented in OCaml. The initial version generated adapters for R, Java, and C.
+        </p>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <th>Requirements</th>
+                <th>Implementation</th>
+                <th>Maintenance</th>
+            </tr>
+            <tr>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="project">
+        <h2 id="a6">A SaaS targeting new safety regulations for oil rigs</h2>
+
+        <p>
+            Deepwater Horizon disaster brought about new safety regulations for companies operating oil rigs. The SaaS
+            we developed would allow then to keep all relevant documentation in one place to facilitate audits.
+        </p>
+
+        <p>
+            The system had 13 modules corresponeding to the chapters of the new regulations. For example, the system
+            would keep all maintenance records for the equipment installed on oil rigs, inspection reports, documents
+            related to incidents and near misses, etc.
+        </p>
+
+        <p>
+            The initial version of the system has been implemented in Erlang and deployed to AWS. Only some modules were
+            functional. Detailed requirements has been developed for the remaining modules.
+        </p>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <th>Requirements</th>
+                <th>Implementation</th>
+                <th>Maintenance</th>
+            </tr>
+            <tr>
+                <td>10%</td>
+                <td><span class="pct50">50%</span></td>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="project">
+        <h2 id="snooponme">snoopon.me - a web app for publishing screenshot streams</h2>
+
+        <p>
+            The app has been concieved as a parody. It supposed to show that people do not care much about their
+            privacy.
+        </p>
+
+        <p>
+            The system relied on users installing a small utility on their PCs. The utility, written in C/C++, captured
+            screenshots every several minutes and published them to the backend written in Erlang. The system has been
+            using CouchDB as its data store.
+        </p>
+
+        <p>
+            There were versions of the local utility for Mac, Windows, and Linux. The screenshots were downsampled
+            before the upload to make most texts illegible. Muliple monitor configurations were fully supported.
+        </p>
+
+        <p>
+            The system have grown to several thousands of users. It captured more than a million screenshots.
+        </p>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <th>Requirements</th>
+                <th>Implementation</th>
+                <th>Maintenance</th>
+            </tr>
+            <tr>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct80">80%</span></td>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="project">
+        <h2 id="medea">An automated trading system of a boutique investment fund</h2>
+
+        <p>
+            The implemented version of the system includes gathering data from multple data providers, training models,
+            executing trading strategies, checking limits, and reporting.
+        </p>
+
+        <p>
+            The system is implemented in Go, Scala, Python, and Julia. It has been deployed to the Google Cloud. The
+            system is serverless. There are (almost) no permanent components.
+        </p>
+
+        <p>
+            It handles terabytes of data and dozens of millions in trading volume.
+        </p>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <th>Requirements</th>
+                <th>Implementation</th>
+                <th>Maintenance</th>
+            </tr>
+            <tr>
+                <td>10%</td>
+                <td><span class="pct50">50%</span></td>
+                <td><span class="pct90">90%</span></td>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="project">
+        <h2 id="lincx">A fast Erlang-based implementation of an OpenFlow switch</h2>
+
+        <img src="images/lincx1_1.png">
+
+        <p>
+            The OpenFlow softswitch has been implemented in pure Erlang targeting a non-standard Erlang VM (LING). A
+            few components have been added to LING in the course of the project. One of them, a netmap driver, allowed
+            the Erlang code to talk directly to the network interface bypassing the kernel.
+        </p>
+
+        <p>
+            OpenFlow rules such as 'forward MPLS packets with QoS set to 3 to port 2' were compiled into Erlang pattern
+            matching expressions. The performance of the softswitch has been further enhanced by figuring out the 'fast
+            path' and avoiding memory allocations along the path.
+        </p>
+
+        <p>
+            As a result, the time the packet spent in the switch has been reduced to 1.5&mu;s, the latency hard to
+            believe given the dynamic nature of Erlang. The software switch passed all conformance tests for versions
+            1.2 and 1.3 of the OpenFlow specification.
+        </p>
+
+        <a href="https://github.com/FlowForwarding/lincx">github.com/FlowForwarding/lincx</a>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <th>Requirements</th>
+                <th>Implementation</th>
+                <th>Maintenance</th>
+            </tr>
+            <tr>
+                <td>10%</td>
+                <td><span class="pct50">50%</span></td>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct50">50%</span></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="project">
+        <h2 id="board">A cost-effective optical interactive board</h2>
+
+        <image src="images/board1.png" />
+
+        <p>
+            The interactive board setup included a projector fitted with a camera and a special stylus. A software
+            driver converted the video feed captured by the camera into the precise position of the stylus.
+        </p>
+
+        <p>
+            The interactive boards based on visual processing were new at the time. Later, many such boards appeared.
+            The unique feature of my implementation is that I did not place the light-emitting element in the tip of the
+            stylus where it could get obscured by the hand holding the stylus. In my setup the entire stylus was glowing
+            in infrared and a special algorithm was able to figure out the position of the tip of the stylus from
+            the captured images of the glow. The algorithm provided for 1mm resolution which was state of the art.
+        </p>
+
+        <p>
+            The software component of the interactive board has been implemented in C/C++ using the OpenCV library.
+        </p>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <th>Requirements</th>
+                <th>Implementation</th>
+                <th>Maintenance</th>
+            </tr>
+            <tr>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct100">100%</span></td>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="project">
+        <h2 id="align">A gene alignment pipeline for the Humane Genome project</h2>
+
+        <p>
+            The pipeline has been developed in collaboration with University of Chicago. The goal was to shrink the time
+            it
+            takes to find starting positions of all known genes within newly-published versions of the human genome.
+        </p>
+
+        <p>
+            We have explored multiple approaches to fuzzy matching trying to surpass the performance of widely used
+            libraries/algorithms.
+        </p>
+
+        <p>
+            The pipeline has been implemented in Erlang in the attempt to harness its distributed mode and pattern
+            matching.
+        </p>
+
+        <p>
+            I helped with the design of alignment algorithms and the performance tuning of the Erlang code.
+        </p>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <th>Requirements</th>
+                <th>Implementation</th>
+                <th>Maintenance</th>
+            </tr>
+            <tr>
+                <td>0%</td>
+                <td><span class="pct20">20%</span></td>
+                <td><span class="pct20">20%</span></td>
+                <td>0%</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2 id="skills-and-interests">Skills &amp; Interests</h2>
+
+        <ul class="skills">
+            <li>Distributed Systems</li>
+            <li>Virtual Machines</li>
+            <li>Performance Tuning</li>
+            <li>Hypervisors</li>
+        </ul>
+
+        <ul class="skills">
+            <li>Erlang, not Elixir</li>
+            <li>C, not C++</li>
+            <li>Go</li>
+            <li>Julia</li>
+            <li>Python, Java, Scala, etc</li>
+        </ul>
+
+        <hr>
+
+        <ul class="interests">
+            <li>Sports (bouldering)</li>
+            <li>Human languages (English, Ukrainian, Russian, Hebrew)</li>
+        </ul>
+
+        <hr>
+
+        <a href="https://www.linkedin.com/in/maximkharchenko" target="_blank"
+            class="contact circle-button linkedin"><img src="images/linkedin.svg" alt=""></a>
+
+        <a class="contact email" href="mailto:maxim.kharchenko@gmail.com">maxim.kharchenko@gmail.com</a>
+
+    </section>
 </body>
-<h1>This is a test teeterl project page</h1>
+
 </html>
