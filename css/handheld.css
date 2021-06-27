@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    font-size: 1em;
+}
+
+section {
+    scroll-snap-align: start;
+}
+
+section.intro {
+    height: 100vh;
+    text-align: center;
+}
+
+section.intro img {
+    width: 50vw;
+}
+
+.menu {
+    margin-top: 1.5em;
+    margin-bottom: 2em;
+    font-size: 1.2em;
+}
+
+.menu-item {
+    display: block;
+    margin: 1em;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: black;
+}
+
+h3.my-name {
+    font-size: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 0;
+}
+
+h3.who-am-i {
+    font-weight: 300;
+    font-size: 1.5em;
+    color: #888a85;
+}
+
+hr {
+    width: 33vw;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+table {
+    width: 100vw;
+    border-collapse: collapse;
+    font-size: 0.8em;
+}
+
+td {
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    vertical-align: top;
+}
+
+span.position {
+    font-weight: bold;
+}
+
+span.degree {
+    font-weight: bold;
+}
+
+section.projects {
+    height: 100vh;
+}
+
+ul.projects {
+    padding-left: 1.5em;
+}
+
+ul.projects li {
+    font-size: 1.2em;
+    list-style-type: square;
+    margin-bottom: 0.5em;
+}
+
+ul.projects li:hover {
+    list-style-type: square;
+}
+
+ul.projects li a {
+    text-decoration: none;
+    color: black;
+}
+
+section.project {
+    padding-bottom: 4em;
+}
+
+section.project h2 {
+    text-decoration: underline;
+}
+
+p {
+    font-weight: 300;
+    font-size: 1em;
+}
+
+section.project img {
+    width: 50vw;
+}
+
+a.github {
+    text-decoration: none;
+    font-size: 1em;
+    color:darkblue;
+}
+
+section.project h5 {
+    font-size: 1em;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+table.role th {
+    text-align: left;
+}
+
+table.role td {
+    width: 20vw;
+}
+
+table.role td span {
+    display: inline-block;
+    text-align: center;
+    background-color: darkgrey;
+    color: white;
+}
+
+span.pct100 { width: 20vw; }
+span.pct90  { width: 18vw; }
+span.pct80  { width: 16vw; }
+span.pct50  { width: 10vw; }
+span.pct20  { width:  4vw; }
+span.pct10  { width:  2vw; }
+
+table.patents th {
+    text-align: left;
+}
+
+code {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+ul.skills {
+    padding-left: 1.5em;
+    list-style-type: square;
+    margin-bottom: 1.5em;
+}
+
+ul.skills li {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+ul.interests {
+    padding-left: 1.5em;
+    list-style-type: square;
+    margin-bottom: 1.5em;
+}
+
+ul.interests li {
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+.back-to-top-button-wrapper {
+    display: none;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 99;
+}
+
+.circle-button {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #eaaa00;
+}
+
+.contact {
+    margin-bottom: 1em;
+}
+
+.linkedin {
+    background-color:lightgrey;
+}
+
+.email {
+    height: 48px;
+    padding-top: 8px;
+    vertical-align: middle;
+    text-decoration: none;
+    color: darkblue;
+    font-size: 20px;
+}
