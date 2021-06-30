@@ -219,3 +219,8 @@ ul.interests li {
     color: darkblue;
     font-size: 1em;
 }
+
+@media only screen and (max-device-width: 480px) {
+    body { margin: 0; }
+    section { width: auto; }
+}
