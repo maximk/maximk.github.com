@@ -1,23 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
 
 html {
-    font-family: 'Source Sans Pro', sans-serif;
     overflow: hidden;
 }
 
 body {
-    display: grid;
-    grid-template-columns: 1fr 150ch 1fr;
-    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.05em;
+    line-height: 1.4;
     height: 100vh;
     overflow-y: scroll;
-	scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
 
+img {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 1empx;
+}
+
+td {
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    vertical-align: top;
+}
+
+hr {
+    width: 30%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
 section {
-    grid-column: 2;
-    height: 100vh;
+    width: 960px;
+    margin: auto;
+    margin-bottom: 8em;
     scroll-snap-align: start;
 }
 
@@ -26,53 +52,29 @@ section.intro {
 }
 
 .menu {
-    margin-top: 32px;
-    margin-bottom: 108px;
-    font-size: 18px;
+    font-size: 1.5em;
+    list-style-type: none;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
 }
 
-.menu-item {
-    display: inline-block;
-    margin: 0 40px;
+.menu li {
+    margin-bottom: 0.5em;
 }
 
-.menu-item a {
-    text-decoration: none;
-    color: black;
+.myname {
+    font-size: 2em;
 }
 
-h3.my-name {
-    font-size: 32px;
-    margin-top: 48px;
-    margin-bottom: 12px;
-}
-
-h3.who-am-i {
+.whoami {
     font-weight: 300;
-    font-size: 24px;
+    font-size: 1.5em;
     color: #888a85;
 }
 
-hr {
-    width: 30ch;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
 h2 {
-    font-size: 32px;
-    margin-bottom: 32px;
-}
-
-table {
-    border-collapse: collapse;
-    font-size: 18px;
-}
-
-td {
-    padding-right: 24px;
-    padding-bottom: 12px;
-    vertical-align: top;
+    font-size: 2em;
+    margin-bottom: 0.5em;
 }
 
 span.position {
@@ -88,9 +90,9 @@ ul.projects {
 }
 
 ul.projects li {
-    font-size: 20px;
+    font-size: 1.2em;
     list-style: none;
-    margin-bottom: 12px;
+    margin-bottom: 0.5em;
 }
 
 ul.projects li:hover {
@@ -103,30 +105,26 @@ ul.projects li a {
 }
 
 section.project h2 {
-    text-decoration: underline;
-}
-
-p {
-    font-weight: 300;
-    font-size: 20px;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
 }
 
 section.project img {
     position: relative;
     float: right;
-    margin: 32px;
+    margin: 1em;
 }
 
 a.github {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1em;
     color:darkblue;
 }
 
 section.project h5 {
-    font-size: 20px;
-    margin-top: 32px;
-    margin-bottom: 12px;
+    font-size: 1em;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
 }
 
 table.role th {
@@ -134,7 +132,7 @@ table.role th {
 }
 
 table.role td {
-    width: 20ch;
+    width: 12em;
 }
 
 table.role td span {
@@ -144,12 +142,20 @@ table.role td span {
     color: white;
 }
 
-span.pct100 { width: 20ch; }
-span.pct90  { width: 18ch; }
-span.pct80  { width: 16ch; }
-span.pct50  { width: 10ch; }
-span.pct20  { width:  4ch; }
-span.pct10  { width:  2ch; }
+span.pct100 { width: 10em; }
+span.pct90  { width: 9em; }
+span.pct80  { width: 8em; }
+span.pct50  { width: 5em; }
+span.pct20  { width:  2em; }
+span.pct10  { width:  1em; }
+
+.back-to-top-button-wrapper {
+    display: none;
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    z-index: 99;
+}
 
 table.patents th {
     text-align: left;
@@ -181,18 +187,10 @@ ul.interests li {
     margin-bottom: 8px;
 }
 
-.back-to-top-button-wrapper {
-    display: none;
-    position: fixed;
-    right: 24px;
-    bottom: 24px;
-    z-index: 99;
-}
-
 .circle-button {
     display: flex;
-    width: 48px;
-    height: 48px;
+    width: 3em;
+    height: 3em;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
