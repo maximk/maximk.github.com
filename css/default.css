@@ -51,6 +51,11 @@ section.intro {
     text-align: center;
 }
 
+section.intro img {
+    text-align: center;
+    width: 18em;
+}
+
 .menu {
     font-size: 1.5em;
     list-style-type: none;
