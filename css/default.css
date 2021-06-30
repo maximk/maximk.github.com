@@ -157,34 +157,39 @@ span.pct10  { width:  1em; }
     z-index: 99;
 }
 
+table.patents {
+    font-size: 1em;
+}
+
 table.patents th {
     text-align: left;
 }
 
 code {
     display: block;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    font-family: monospace;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 ul.skills {
     padding-left: 0;
-    margin-bottom: 32px;
+    margin-bottom: 1em;
 }
 
 ul.skills li {
-    font-size: 20px;
-    margin-bottom: 8px;
+    font-size: 1em;
+    margin-bottom: 0.5em;
 }
 
 ul.interests {
     padding-left: 0;
-    margin-bottom: 32px;
+    margin-bottom: 0.5em;
 }
 
 ul.interests li {
-    font-size: 20px;
-    margin-bottom: 8px;
+    font-size: 1em;
+    margin-bottom: 0.5em;
 }
 
 .circle-button {
@@ -198,7 +203,7 @@ ul.interests li {
 }
 
 .contact {
-    margin-right: 48px;
+    margin-right: 2em;
     display: inline-flex;
 }
 
@@ -207,10 +212,10 @@ ul.interests li {
 }
 
 .email {
-    height: 48px;
-    padding-top: 8px;
+    height: 2em;
+    padding-top: 0.5em;
     vertical-align: middle;
     text-decoration: none;
     color: darkblue;
-    font-size: 20px;
+    font-size: 1em;
 }
