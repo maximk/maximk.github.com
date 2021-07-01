@@ -58,6 +58,7 @@ section.intro img {
 }
 
 .menu {
+    padding: 0;
     font-size: 1.5em;
     list-style-type: none;
     margin-top: 1em;
@@ -231,4 +232,6 @@ ul.interests li {
     html { font-size: 10px; }
     section { width: auto; }
     section.project img { float: none; width: 20em; }
+    ul.projects { padding-left: 2em; }
+    ul.projects li {   list-style-type: square; }
 }
