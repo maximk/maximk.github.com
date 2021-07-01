@@ -227,7 +227,7 @@ ul.interests li {
 }
 
 @media only screen and (max-device-width: 480px) {
-    html { font-size: 12px; }
+    html { font-size: 10px; }
     body { margin: 0; }
     section { width: auto; }
 }
