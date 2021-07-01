@@ -11,9 +11,8 @@ body {
     line-height: 1.4;
     height: 100vh;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-behavior: smooth;
-    background-color: #eaaa00;
 }
 
 img {
@@ -28,7 +27,6 @@ a {
 table {
     border-collapse: collapse;
     font-size: 1empx;
-    background-color: blueviolet;
 }
 
 td {
@@ -46,9 +44,8 @@ hr {
 section {
     width: 960px;
     margin: auto;
-    margin-bottom: 8em;
+    margin-bottom: 4em;
     scroll-snap-align: start;
-    background-color: chartreuse;
 }
 
 section.intro {
@@ -136,27 +133,28 @@ section.project h5 {
     margin-bottom: 0.5em;
 }
 
+table.role {
+    font-size: 1em;
+}
+
 table.role th {
     text-align: left;
+    padding-right: 0.5em;
 }
 
-table.role td {
-    width: 12em;
-}
-
-table.role td span {
+table.role span {
     display: inline-block;
     text-align: center;
-    background-color: darkgrey;
+    background-color:cornflowerblue;
     color: white;
 }
 
-span.pct100 { width: 10em; }
-span.pct90  { width: 9em; }
-span.pct80  { width: 8em; }
-span.pct50  { width: 5em; }
-span.pct20  { width:  2em; }
-span.pct10  { width:  1em; }
+.pct100 { width: 10em; }
+.pct90  { width: 9em; }
+.pct80  { width: 8em; }
+.pct50  { width: 5em; }
+.pct20  { width:  2em; }
+.pct10  { width:  1em; }
 
 .back-to-top-button-wrapper {
     display: none;
@@ -230,7 +228,7 @@ ul.interests li {
 }
 
 @media only screen and (max-device-width: 480px) {
-    html { font-size: 8px; }
+    html { font-size: 10px; }
     section { width: auto; }
-    section.project img { width: 20em }
+    section.project img { float: none; width: 20em; }
 }
