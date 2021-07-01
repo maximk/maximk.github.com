@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
 
 html {
+    font-size: 16px;
     overflow: hidden;
 }
 
@@ -226,6 +227,7 @@ ul.interests li {
 }
 
 @media only screen and (max-device-width: 480px) {
+    html { font-size: 12px; }
     body { margin: 0; }
     section { width: auto; }
 }
