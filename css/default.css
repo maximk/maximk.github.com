@@ -13,6 +13,7 @@ body {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    background-color: #eaaa00;
 }
 
 img {
@@ -27,6 +28,7 @@ a {
 table {
     border-collapse: collapse;
     font-size: 1empx;
+    background-color: blueviolet;
 }
 
 td {
@@ -46,6 +48,7 @@ section {
     margin: auto;
     margin-bottom: 8em;
     scroll-snap-align: start;
+    background-color: chartreuse;
 }
 
 section.intro {
