@@ -46,7 +46,7 @@
 
         <table>
             <tr>
-                <td>Jan 2020 - Now</td>
+                <td>Jan 2020 - Jul 2022</td>
                 <td><span class="position">Partner/Techical Lead</span><br>
                     <span class="company">PureTech Capital Management LLC</span><br>
                     <span class="location">Palo Alto, USA</span>
@@ -130,71 +130,55 @@
         <h2 id="selected-projects">Selected Projects</h2>
 
         <ul class="projects">
-            <li><a href="#ling">A complete reimplementation of Erlang VM</a></li>
+            <li><a href="#medea"></a>An automated trading system of a boutique investment fund</a></li>
+            <li><a href="#bt">A strategy backtesting framework with tick-level accuracy</a></li>
+            <li><a href="#signals">A robust signal detector for arbitrary time series</a></li>
+            <li><a href="#propex">A propensity to exit model of stock markets</a></li>
+            <li><a href="#gmax">A time traveler gain indicator of market volatility</a></li>
+        </ul>
+
+        <h2>...</h2>
+
+        <ul class="projects">
             <li><a href="#fastscore">A microservices-based deployment platform for analytic models</a></li>
+            <li><a href="#membrane">Membrane - a zero-copy local interface for ML pipelines</a></li>
             <li><a href="#gale">A SAS-to-PFA compiler</a></li>
-            <li>
-                <a href="#membrane">Membrane - a zero-copy local interface between parts of an ML pipeline</a>
-            </li>
-            <li><a href="#a6">A SaaS targeting new safety regulations for oil rigs</a></li>
-            <li><a href="#snooponme">snoopon.me - a web app for publishing screenshot streams</a></li>
-            <li><a href="#medea">An automated trading system of a boutique investment fund</a></li>
+            <li><a href="#ling">A complete reimplementation of Erlang VM</a></li>
             <li><a href="#lincx">A fast Erlang-based implementation of an OpenFlow switch</a></li>
-            <li><a href="#board">A cost-effective optical interactive board</a></li>
-            <li><a href="#align">A gene alignment pipeline for the Humane Genome project</a></li>
+            <li><a href="#align">A gene alignment pipeline for the Human Genome project</a></li>
         </ul>
 
     </section>
 
     <section class="project">
-        <h2 id="ling">A complete reimplementation of Erlang VM</h2>
+        <h2 id="medea">An automated trading system of a boutique investment fund</h2>
 
-        <img src="images/ling1_1.png">
+        <img src="/images/medea1.png">
 
         <p>
-            It is a massive project hard to describe succinctly. The new Erlang VM - called LING - has been implemented
-            from scratch. LING is the functional equivalent of the standard Erlang VM (BEAM).
+            The implemented version of the system includes gathering data from
+            multiple data providers, training models, executing trading strategies, checking limits, and reporting.
         </p>
 
         <p>
-            LING is a unikernel - it does not require an operating system. It boots directly as a Xen instance.
-            Essentially, Erlang processes become OS processes, Erlang drivers become OS drivers, Erlang shell - the OS
-            shell.
+            The system is implemented in Go, Scala, Python, and Julia. It has been deployed to the Google Cloud. The
+            system is serverless - there are almost no permanent components.
         </p>
 
         <p>
-            The LING's optimization target is the startup time. I tried hard to shrink the time since the beginning of
-            the boot sequence until the application code starts to execute. As a result, it is possible to spin up a
-            LING-based Xen instance within 100ms. At the time, a Linux-based Xen instance would take dozens of seconds
-            to boot.
+            It handles terabytes of data and many millions in trading volume.
         </p>
-
-        <p>
-            LING uses a unique approach to specialization of the instruction set of the Erlang VM. The build process
-            analyzes a large body of Erlang code to identify widespread instruction variants. For example, if the `load
-            x1, 13` instruction happens often, then a new opcode is allocated specifically for loading the value 13 to
-            the register x1. Depending on the analyzed Erlang code, the low-level instruction set of Ling could be quite
-            different.
-        </p>
-
-        <p>
-            Later, LING has been ported to run on Linux and a baremetal MIPS microcontroller.
-        </p>
-
-        <a class="github" href="https://github.com/cloudozer/ling">github.com/cloudozer/ling</a>
-
-
 
         <h5 class="role">My contribution to the project</h5>
 
         <table class="role">
             <tr>
                 <th>Idea</th>
-                <td><span class="pct100">100%</span></td>
+                <td>10%</td>
             </tr>
             <tr>
                 <th>Requirements</th>
-                <td><span class="pct100">100%</span></td>
+                <td><span class="pct50">50%</span></td>
             </tr>
             <tr>
                 <th>Implementation</th>
@@ -202,9 +186,52 @@
             </tr>
             <tr>
                 <th>Maintenance</th>
-                <td><span class="pct90">90%</span></td>
+                <td><span class="pct100">100%</span></td>
             </tr>
         </table>
+    </section>
+
+    <section class="project">
+        <h2 id="bt">A strategy backtesting framework with tick-level accuracy</h2>
+
+        <p>
+            TODO
+        </p>
+    </section>
+
+    <section class="project">
+        <h2 id="signals">A robust signal detector for arbitrary time series</h2>
+
+        <p>
+            The signal detector aimed to verify when a time series is predictable with respect to another time series.
+            The idea was to make the signal detector sufficiently general and apply it to all available public time
+            series related to finance and markets.
+        </p>
+        <p>
+            The detector was implemented in Julia. It was able to consume input of almost any Julia data type. Thus the
+            publicly available data sources were verified in bulk. They required little preparatory work to make them
+            compatible with the detector.
+        </p>
+    </section>
+
+    <section class="project">
+        <h2 id="propex">A propensity to exit model of stock markets</h2>
+
+        <p>
+            This model of behaviour of market participants was based on the assumption that the market moves mostly from
+            closing existing positions and the decision to close the position depends on the difference between opening
+            and the current price. A trader may decide to exit the position because the profits are high (greed) or
+            because the losses are unsustainable (fear).
+        </p>
+        <p>
+            The model allowed a compact descrete formulation yet it resisted all attempts at finding closed form
+            solutions. Computer simulations have shown that there must exist solutions with prices trending at a stready
+            rate.
+        </p>
+        <p>
+            The pronensity to exit model is a promising approach to understanding of markets without fundumentals, such
+            as cryptocurrencies.
+        </p>
     </section>
 
     <section class="project">
@@ -281,50 +308,92 @@
     </section>
 
     <section class="project">
-        <h2 id="gale">A SAS-to-PFA compiler</h2>
+        <h2 id="gmax">A time traveler gain indicator of market volatility</h2>
 
         <p>
-            (PFA is a open format for representation of analytic models based on JSON)
+            In the course of the project I explored a new indicator - a 'time traveler gain'. The indicator calculates
+            the maximum gain that can be realized with the perfect knowledge of future prices in the presence of trading
+            costs and without a leverage.
+        </p>
+        <p>
+            It happened that the calculation of the time traveler gain is, in general, NP-complete. Yet the approximate
+            algorithm equipped with a few heuristrics yielded near-optimal results.
+        </p>
+        <p>
+            The time traveler gain is yet another indicator of market volatility. It seems more to the point than using
+            the standard deviation as a standard measure of volatility.
+        </p>
+    </section>
+
+    <section class="project">
+        <h2 id="fastscore">A microservices-based deployment platform for analytic models</h2>
+
+        <p>
+            The platform 'operationalizes' the lifecycle management of analytic models.
         </p>
 
         <p>
-            The compiler has been developed in the course of a daring project to convert a large SAS model to a
-            different format. The SAS model had >10K lines of code and used a substantial subset of the SAS language.
+            I have implemented the core components of the initial version of the platform. One of then - the engine -
+            could control models written in Python, R, Java, and C. It also allowed uniform access to a range of data
+            sources, such as Kafka, Hadoop, S3, etc using a range of data formats.
         </p>
 
         <p>
-            The SAS-to-PFA compiler has been implemented in OCaml. The compiler proved to be complete enough to
-            translate the target model. The converted model has been producing results identical to the orginal.
+            The engine has been implemented in Erlang with bits of other languages. It has been highly-tuned for
+            performance. For example, the Avro schema would be compiled into a set of Erlang routines to provide for the
+            fastest decoding possible.
         </p>
 
         <p>
-            An interesting feature of the compiler is speculative parsing. The SAS language does not have proper
-            keywords. For example, the following is a valid SAS statement:
-            <code>
-            IF ELSE = 1 THEN ELSE = 2;
-            </code>
-
-            The compiler had to explore multiple ways to parse the SAS code to build a valid syntax tree.
+            The engine had full control over the execution flow. It did not use third-party libraries which could start
+            new processes, etc. Many data access components were custom-made: a Kafka client, an HDFS client, AWS
+            authentication.
         </p>
+
+        <p>
+            The initial version of the platform resulted in a series of pilot projects at Fortune 500 companies.
+        </p>
+
+        <h5>Patents granted</h5>
+
+        <table class="patents">
+            <tr>
+                <th>Patent No</th>
+                <th>Title</th>
+            </tr>
+            <tr>
+                <td><a href="https://uspto.report/patent/grant/11,003,486">11,003,486</a></td>
+                <td>Dynamically configurable microservice model for data analysis using sensors</td>
+            </tr>
+            <tr>
+                <td><a href="https://uspto.report/patent/grant/10,891,151">10,891,151</a></td>
+                <td>Deployment and management platform for model execution engine containers</td>
+            </tr>
+            <tr>
+                <td><a href="https://uspto.report/patent/grant/10,860,365">10,860,365</a></td>
+                <td>Analytic model execution engine with instrumentation for granular performance analysis for metrics
+                    and diagnostics for troubleshooting</td>
+            </tr>
+        </table>
 
         <h5 class="role">My contribution to the project</h5>
 
         <table class="role">
             <tr>
                 <th>Idea</th>
-                <td>10%</td>
+                <td>0%</td>
             </tr>
             <tr>
                 <th>Requirements</th>
-                <td><span class="pct50">50%</span></td>
+                <td>10%</td>
             </tr>
             <tr>
                 <th>Implementation</th>
-                <td><span class="pct100">100%</span></td>
+                <td><span class="pct80">80%</span></td>
             </tr>
             <tr>
                 <th>Maintenance</th>
-                <td><span class="pct100">100%</span></td>
+                <td><span class="pct50">50%</span></td>
             </tr>
         </table>
     </section>
@@ -376,22 +445,30 @@
     </section>
 
     <section class="project">
-        <h2 id="a6">A SaaS targeting new safety regulations for oil rigs</h2>
+        <h2 id="gale">A SAS-to-PFA compiler</h2>
 
         <p>
-            Deepwater Horizon disaster brought about new safety regulations for companies operating oil rigs. The SaaS
-            we developed would allow then to keep all relevant documentation in one place to facilitate audits.
+            (PFA is a open format for representation of analytic models based on JSON)
         </p>
 
         <p>
-            The system had 13 modules corresponding to the chapters of the new regulations. For example, the system
-            would keep all maintenance records for the equipment installed on oil rigs, inspection reports, documents
-            related to incidents and near misses, etc.
+            The compiler has been developed in the course of a daring project to convert a large SAS model to a
+            different format. The SAS model had >10K lines of code and used a substantial subset of the SAS language.
         </p>
 
         <p>
-            The initial version of the system has been implemented in Erlang and deployed to AWS. Only some modules were
-            functional. Detailed requirements has been developed for the remaining modules.
+            The SAS-to-PFA compiler has been implemented in OCaml. The compiler proved to be complete enough to
+            translate the target model. The converted model has been producing results identical to the orginal.
+        </p>
+
+        <p>
+            An interesting feature of the compiler is speculative parsing. The SAS language does not have proper
+            keywords. For example, the following is a valid SAS statement:
+            <code>
+            IF ELSE = 1 THEN ELSE = 2;
+            </code>
+
+            The compiler had to explore multiple ways to parse the SAS code to build a valid syntax tree.
         </p>
 
         <h5 class="role">My contribution to the project</h5>
@@ -417,27 +494,43 @@
     </section>
 
     <section class="project">
-        <h2 id="snooponme">snoopon.me - a web app for publishing screenshot streams</h2>
+        <h2 id="ling">A complete reimplementation of Erlang VM</h2>
+
+        <img src="/images/ling1_1.png">
 
         <p>
-            The app has been conceived as a parody. It supposed to show that people do not care much about their
-            privacy.
+            It is a massive project hard to describe succinctly. The new Erlang VM - called LING - has been implemented
+            from scratch. LING is the functional equivalent of the standard Erlang VM (BEAM).
         </p>
 
         <p>
-            The system relied on users installing a small utility on their PCs. The utility, written in C/C++, captured
-            screenshots every several minutes and published them to the backend written in Erlang. The system has been
-            using CouchDB as its data store.
+            LING is a unikernel - it does not require an operating system. It boots directly as a Xen instance.
+            Essentially, Erlang processes become OS processes, Erlang drivers become OS drivers, Erlang shell - the OS
+            shell.
         </p>
 
         <p>
-            There were versions of the local utility for Mac, Windows, and Linux. The screenshots were downsampled
-            before the upload to make most texts illegible. Multiple monitor configurations were fully supported.
+            The LING's optimization target is the startup time. I tried hard to shrink the time since the beginning of
+            the boot sequence until the application code starts to execute. As a result, it is possible to spin up a
+            LING-based Xen instance within 100ms. At the time, a Linux-based Xen instance would take dozens of seconds
+            to boot.
         </p>
 
         <p>
-            The system have grown to several thousands of users. It captured more than a million screenshots.
+            LING uses a unique approach to specialization of the instruction set of the Erlang VM. The build process
+            analyzes a large body of Erlang code to identify widespread instruction variants. For example, if the `load
+            x1, 13` instruction happens often, then a new opcode is allocated specifically for loading the value 13 to
+            the register x1. Depending on the analyzed Erlang code, the low-level instruction set of Ling could be quite
+            different.
         </p>
+
+        <p>
+            Later, LING has been ported to run on Linux and a baremetal MIPS microcontroller.
+        </p>
+
+        <a class="github" href="https://github.com/cloudozer/ling">github.com/cloudozer/ling</a>
+
+
 
         <h5 class="role">My contribution to the project</h5>
 
@@ -448,47 +541,7 @@
             </tr>
             <tr>
                 <th>Requirements</th>
-                <td><span class="pct80">80%</span></td>
-            </tr>
-            <tr>
-                <th>Implementation</th>
                 <td><span class="pct100">100%</span></td>
-            </tr>
-            <tr>
-                <th>Maintenance</th>
-                <td><span class="pct100">100%</span></td>
-            </tr>
-        </table>
-    </section>
-
-    <section class="project">
-        <h2 id="medea">An automated trading system of a boutique investment fund</h2>
-
-        <p>
-            The implemented version of the system includes gathering data from
-            multiple data providers, training models,
-            executing trading strategies, checking limits, and reporting.
-        </p>
-
-        <p>
-            The system is implemented in Go, Scala, Python, and Julia. It has been deployed to the Google Cloud. The
-            system is serverless. There are (almost) no permanent components.
-        </p>
-
-        <p>
-            It handles terabytes of data and dozens of millions in trading volume.
-        </p>
-
-        <h5 class="role">My contribution to the project</h5>
-
-        <table class="role">
-            <tr>
-                <th>Idea</th>
-                <td>10%</td>
-            </tr>
-            <tr>
-                <th>Requirements</th>
-                <td><span class="pct50">50%</span></td>
             </tr>
             <tr>
                 <th>Implementation</th>
@@ -496,7 +549,7 @@
             </tr>
             <tr>
                 <th>Maintenance</th>
-                <td><span class="pct100">100%</span></td>
+                <td><span class="pct90">90%</span></td>
             </tr>
         </table>
     </section>
@@ -504,7 +557,7 @@
     <section class="project">
         <h2 id="lincx">A fast Erlang-based implementation of an OpenFlow switch</h2>
 
-        <img src="images/lincx1_1.png">
+        <img src="/images/lincx1_1.png">
 
         <p>
             The OpenFlow softswitch has been implemented in pure Erlang targeting a non-standard Erlang VM (LING). A
@@ -544,50 +597,6 @@
             <tr>
                 <th>Maintenance</th>
                 <td><span class="pct50">50%</span></td>
-            </tr>
-        </table>
-    </section>
-
-    <section class="project">
-        <h2 id="board">A cost-effective optical interactive board</h2>
-
-        <image src="images/board1.png" />
-
-        <p>
-            The interactive board setup included a projector fitted with a camera and a special stylus. A software
-            driver converted the video feed captured by the camera into the precise position of the stylus.
-        </p>
-
-        <p>
-            The interactive boards based on visual processing were new at the time. Later, many such boards appeared.
-            The unique feature of my implementation is that I did not place the light-emitting element in the tip of the
-            stylus where it could get obscured by the hand holding the stylus. In my setup the entire stylus was glowing
-            in infrared and a special algorithm was able to figure out the position of the tip of the stylus from
-            the captured images of the glow. The algorithm provided for 1mm resolution which was state of the art.
-        </p>
-
-        <p>
-            The software component of the interactive board has been implemented in C/C++ using the OpenCV library.
-        </p>
-
-        <h5 class="role">My contribution to the project</h5>
-
-        <table class="role">
-            <tr>
-                <th>Idea</th>
-                <td><span class="pct100">100%</span></td>
-            </tr>
-            <tr>
-                <th>Requirements</th>
-                <td><span class="pct100">100%</span></td>
-            </tr>
-            <tr>
-                <th>Implementation</th>
-                <td><span class="pct100">100%</span></td>
-            </tr>
-            <tr>
-                <th>Maintenance</th>
-                <td><span class="pct100">100%</span></td>
             </tr>
         </table>
     </section>
@@ -665,7 +674,7 @@
         <hr>
 
         <a href="https://www.linkedin.com/in/maximkharchenko" target="_blank"
-            class="contact circle-button linkedin"><img src="images/linkedin.svg" alt=""></a>
+            class="contact circle-button linkedin"><img src="/images/linkedin.svg" alt=""></a>
 
         <a class="contact email" href="mailto:maxim.kharchenko@gmail.com">maxim.kharchenko@gmail.com</a>
 
