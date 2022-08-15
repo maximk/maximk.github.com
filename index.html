@@ -130,9 +130,9 @@
         <h2 id="selected-projects">Selected Projects</h2>
 
         <ul class="projects">
-            <li><a href="#medea"></a>An automated trading system of a boutique investment fund</a></li>
-            <li><a href="#bt">A strategy backtesting framework with tick-level accuracy</a></li>
+            <li><a href="#medea">An automated trading system of a boutique investment fund</a></li>
             <li><a href="#signals">A robust signal detector for arbitrary time series</a></li>
+            <li><a href="#bt">A strategy backtesting framework with tick-level accuracy</a></li>
             <li><a href="#propex">A propensity to exit model of stock markets</a></li>
             <li><a href="#gmax">A time traveler gain indicator of market volatility</a></li>
         </ul>
@@ -192,113 +192,38 @@
     </section>
 
     <section class="project">
-        <h2 id="bt">A strategy backtesting framework with tick-level accuracy</h2>
-
-        <p>
-            TODO
-        </p>
-    </section>
-
-    <section class="project">
         <h2 id="signals">A robust signal detector for arbitrary time series</h2>
 
-        <p>
-            The signal detector aimed to verify when a time series is predictable with respect to another time series.
-            The idea was to make the signal detector sufficiently general and apply it to all available public time
-            series related to finance and markets.
-        </p>
-        <p>
-            The detector was implemented in Julia. It was able to consume input of almost any Julia data type. Thus the
-            publicly available data sources were verified in bulk. They required little preparatory work to make them
-            compatible with the detector.
-        </p>
-    </section>
-
-    <section class="project">
-        <h2 id="propex">A propensity to exit model of stock markets</h2>
+        <img src="/images/signals1.png">
 
         <p>
-            This model of behaviour of market participants was based on the assumption that the market moves mostly from
-            closing existing positions and the decision to close the position depends on the difference between opening
-            and the current price. A trader may decide to exit the position because the profits are high (greed) or
-            because the losses are unsustainable (fear).
+            The signal detector aims at verifying if a time series is predictable with respect to another time series.
+            The idea is to make the signal detector sufficiently general and apply it to all available public time
+            series even vaguely related to markets.
         </p>
         <p>
-            The model allowed a compact descrete formulation yet it resisted all attempts at finding closed form
-            solutions. Computer simulations have shown that there must exist solutions with prices trending at a stready
-            rate.
+            The detector is implemented in Julia. It can consume input of almost any Julia data type. This provides for
+            rapid testing of a new data source as the the effort of making it compatible with the signal detector is
+            relatively small.
         </p>
         <p>
-            The pronensity to exit model is a promising approach to understanding of markets without fundumentals, such
-            as cryptocurrencies.
+            The signal detection algorithm itself is novel and proprietary.
         </p>
-    </section>
-
-    <section class="project">
-        <h2 id="fastscore">A microservices-based deployment platform for analytic models</h2>
-
-        <p>
-            The platform 'operationalizes' the lifecycle management of analytic models.
-        </p>
-
-        <p>
-            I have implemented the core components of the initial version of the platform. One of then - the engine -
-            could control models written in Python, R, Java, and C. It also allowed uniform access to a range of data
-            sources, such as Kafka, Hadoop, S3, etc using a range of data formats.
-        </p>
-
-        <p>
-            The engine has been implemented in Erlang with bits of other languages. It has been highly-tuned for
-            performance. For example, the Avro schema would be compiled into a set of Erlang routines to provide for the
-            fastest decoding possible.
-        </p>
-
-        <p>
-            The engine had full control over the execution flow. It did not use third-party libraries which could start
-            new processes, etc. Many data access components were custom-made: a Kafka client, an HDFS client, AWS
-            authentication.
-        </p>
-
-        <p>
-            The initial version of the platform resulted in a series of pilot projects at Fortune 500 companies.
-        </p>
-
-        <h5>Patents granted</h5>
-
-        <table class="patents">
-            <tr>
-                <th>Patent No</th>
-                <th>Title</th>
-            </tr>
-            <tr>
-                <td><a href="https://uspto.report/patent/grant/11,003,486">11,003,486</a></td>
-                <td>Dynamically configurable microservice model for data analysis using sensors</td>
-            </tr>
-            <tr>
-                <td><a href="https://uspto.report/patent/grant/10,891,151">10,891,151</a></td>
-                <td>Deployment and management platform for model execution engine containers</td>
-            </tr>
-            <tr>
-                <td><a href="https://uspto.report/patent/grant/10,860,365">10,860,365</a></td>
-                <td>Analytic model execution engine with instrumentation for granular performance analysis for metrics
-                    and diagnostics for troubleshooting</td>
-            </tr>
-        </table>
 
         <h5 class="role">My contribution to the project</h5>
 
         <table class="role">
             <tr>
                 <th>Idea</th>
-                <td>0%</td>
+                <td><span class="pct50">50%</span></td>
             </tr>
             <tr>
                 <th>Requirements</th>
-                <td>10%</td>
+                <td><span class="pct50">50%</span></td>
             </tr>
             <tr>
                 <th>Implementation</th>
-                <td><span class="pct80">80%</span></td>
+                <td><span class="pct50">50%</span></td>
             </tr>
             <tr>
                 <th>Maintenance</th>
@@ -308,21 +233,125 @@
     </section>
 
     <section class="project">
+        <h2 id="bt">A strategy backtesting framework with tick-level accuracy</h2>
+
+        <p>
+            The backtesting framework estimates performance of trading strategies as if they run in the past. It serves
+            as a gatekeeper preceding strategy deployment. The deployment platform requires for the running strategy to
+            have a recent backtesting report. It compares the actual performance of the strategy with the expectations
+            from the report.
+        </p>
+        <p>
+            The framework has a few unique features. For example, it can test strategies packaged as microservices in
+            the preparation for deployment. This removes any discrepancies between what is being tested and what runs in
+            production. For certain strategies trading on the daily cadence, the exectution time may be important. In
+            such cases the framework uses tick-level data to pipoint the most likely execution time and price.
+        </p>
+        <p>
+            The backtesting framework is implemented in Go as a series of command-line tools.
+        </p>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <td><span class="pct50">50%</span></td>
+            </tr>
+            <tr>
+                <th>Requirements</th>
+                <td><span class="pct50">50%</span></td>
+            </tr>
+            <tr>
+                <th>Implementation</th>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+            <tr>
+                <th>Maintenance</th>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="project">
+        <h2 id="propex">A propensity to exit model of stock markets</h2>
+
+        <p>
+            This model of behaviour of market participants assumes that the market moves mostly from
+            closing existing positions and the decision to close the position depends on the difference between opening
+            and the current price. A trader may decide to exit the position because the profits are high (greed) or
+            because the losses are unsustainable (fear). Exiting positions is associated with the sense of urgency. The
+            urgency leads to the price impact.
+        </p>
+        <p>
+            The propensity to exit model has a compact descrete formulation yet it resisted all attempts at finding
+            closed form solutions. Computer simulations have shown that there must exist solutions with prices trending
+            at a stready rate.
+        </p>
+        <p>
+            The model is a promising approach to understanding the dynamics of markets lacking fundumentals, such as
+            cryptocurrencies.
+        </p>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+            <tr>
+                <th>Requirements</th>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+            <tr>
+                <th>Implementation</th>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+            <tr>
+                <th>Maintenance</th>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="project">
         <h2 id="gmax">A time traveler gain indicator of market volatility</h2>
+
+        <img src="/images/gmax1.png">
 
         <p>
             In the course of the project I explored a new indicator - a 'time traveler gain'. The indicator calculates
-            the maximum gain that can be realized with the perfect knowledge of future prices in the presence of trading
-            costs and without a leverage.
+            the maximum gain that can be realized with the perfect knowledge of future prices without a leverage.
         </p>
         <p>
-            It happened that the calculation of the time traveler gain is, in general, NP-complete. Yet the approximate
-            algorithm equipped with a few heuristrics yielded near-optimal results.
+            It happened that the trading costs make calculation of the time traveler gain an NP-complete problem. At the same time an approximate algorithm equipped with a few heuristrics yields near-optimal results.
         </p>
         <p>
-            The time traveler gain is yet another indicator of market volatility. It seems more to the point than using
-            the standard deviation as a standard measure of volatility.
+            The time traveler gain is yet another indicator of market volatility. It seems more to the point than
+            the standard deviation as a measure of volatility.
         </p>
+
+        <h5 class="role">My contribution to the project</h5>
+
+        <table class="role">
+            <tr>
+                <th>Idea</th>
+                <td><span class="pct80">80%</span></td>
+            </tr>
+            <tr>
+                <th>Requirements</th>
+                <td><span class="pct80">80%</span></td>
+            </tr>
+            <tr>
+                <th>Implementation</th>
+                <td><span class="pct80">80%</span></td>
+            </tr>
+            <tr>
+                <th>Maintenance</th>
+                <td><span class="pct100">100%</span></td>
+            </tr>
+        </table>
     </section>
 
     <section class="project">
